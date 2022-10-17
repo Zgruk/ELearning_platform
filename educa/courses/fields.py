@@ -1,4 +1,3 @@
-from dataclasses import field
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -27,4 +26,4 @@ class OrderField(models.PositiveIntegerField):
             setattr(model_instance, self.attname, value)
             return value
         else:
-            return super.pre_save(model_instance, add)
+            return super().pre_save(model_instance, add)
